@@ -45,14 +45,14 @@ for country in country_data:
             lat=[country["coordinates"]["coordinates"][0]],
             mode='markers',
             text=[marker_text],
-            showlegend=False,  # Oculta a legenda do gráfico,
+            name=country["coordinates"]["name"],
             hoverinfo='text'
         )
     )
 
 # Configurando o layout da aplicação Dash
 app.layout = html.Div([
-    html.H1('Approximated estimates for the share of gross final consumption of renewable energy sources, 2022'),  # Título da página
+    html.H1('Approximated estimates for the share of gross final consumption of renewable energy sources, 2022', style={"fontFamily": 'Arial, sans-serif', "fontSize": '20px', 'textAlign': 'center', 'color': 'grey'}),  # Título da página
     dcc.Graph(
         id='europe-map',
         style={'height': '90vh', 'width': '100%'},  # Estilo do gráfico
