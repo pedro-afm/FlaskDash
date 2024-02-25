@@ -17,5 +17,3 @@ with open('./data/country_data.csv', newline='') as csv_file:
     # Convertendo a lista de dicionários para JSON
     json_paises = json.dumps(countries, indent=4)
 
-
-export json_paises
